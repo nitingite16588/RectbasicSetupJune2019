@@ -41,6 +41,12 @@ export default class UserAwardForm extends Component {
 
   }
 
+  ratingChanged(newRating,item){
+    console.log(newRating)
+    console.log(item)
+
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -80,7 +86,7 @@ export default class UserAwardForm extends Component {
                       <div class="card-footer">
                         <div class="stats">
                           <i class="material-icons">date_range</i>
-                          <ReactStars count={5} size={40} value={item.rating} color2={'#ffd700'} half={false} />
+                          <ReactStars onChange={this.ratingChanged.bind(this,item)} count={5} size={40} value={item.rating} color2={'#ffd700'} half={false} />
                         </div>
                       </div>
                     </div>
