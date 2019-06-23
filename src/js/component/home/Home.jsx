@@ -1,13 +1,27 @@
 import React ,{Component } from 'react'
+import $ from "jquery";
 export default class Home extends Component{
     constructor(props){
-        super(props)
+        super(props);
+
+
+       
        
     }
 
+
+   
+   
+
     render(){
+
+     
         return(
-            "home component nitin"
+     "home compro"
+
+
         )
     }
 }
+
+
