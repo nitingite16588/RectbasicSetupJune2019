@@ -11,7 +11,7 @@
     color: #e1ffff;
   }
   .nav-side-menu .brand {
-    background-color: #23282e;
+    //background-color: #23282e;
     line-height: 50px;
     display: block;
     text-align: center;
@@ -99,14 +99,21 @@
     width: 20px;
     padding-right: 30px;
   }
-  .nav-side-menu li:hover {
-    border-left: 3px solid #d19b3d;
-    background-color: #4f5b69;
+  .nav-side-menu li:hover   {
+   border-left: 5px solid #d19b3d;
+    //background-color: #4f5b69;
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
     -ms-transition: all 1s ease;
     transition: all 1s ease;
+    opacity:1;
+  }
+
+  .nav-side-menu .selected li{
+    border-left: 5px solid #d19b3d;
+      background-color: #27a9e3;
+      opacity:1;
   }
   @media (max-width: 767px) {
     .nav-side-menu {
@@ -154,5 +161,10 @@
 
 a:hover ,a{
     color: inherit!important ;
+    text-decoration:none !important;
 }
+
+
+
+
 
