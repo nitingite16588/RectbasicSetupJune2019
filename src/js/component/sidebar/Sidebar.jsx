@@ -7,8 +7,10 @@ import Home from '../home/Home.jsx';
 import AwardForm from '../admin/AwardForm.jsx';
 
 import AwardDetails from '../admin/AwardDetails.jsx';
-
 import Dashboard from '../admin/Dashboard.jsx';
+import UserDashboard from '../user/UserDashboard.jsx';
+import UserAwardForm from '../user/UserAwardForm.jsx';
+import UserAwardDetails from '../user/UserAwardDetails.jsx';
 export default class Sidebar extends Component {
   constructor(props) {
     super(props);
@@ -60,6 +62,14 @@ export default class Sidebar extends Component {
                   </a>
                 </li>
               </NavLink >
+
+              <NavLink to="/userdashboard" activeClassName="selected">
+                <li>
+                  <a>
+                    <i class="fas fa-tachometer-alt fa-lg"></i> User Dashboard
+                 </a>
+                </li>
+              </NavLink >
             </ul>
           </div>
         </div>
@@ -73,6 +83,13 @@ export default class Sidebar extends Component {
               <Route path="/counter" component={Counter} />
               <Route path="/awardform" component={AwardForm} />
               <Route path="/awarddetails" component={AwardDetails} />
+
+              <Route exact path="/userdashboard" component={UserDashboard} />
+
+              <Route exact path="/userawarddetails" component={UserAwardDetails} />
+              <Route exact path="/userawardform" component={UserAwardForm} />
+
+              
               <Route component={Dashboard} />
 
               

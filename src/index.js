@@ -13,6 +13,6 @@ import  './css/demo.scss';
 import  './css/navbar.scss';
 import  './css/sidebar.scss';
 import './css/all.css';
-import './css/app.css';
+import './css/app.scss';
 
 ReactDOM.render(<App/>,document.querySelector("#root"))
