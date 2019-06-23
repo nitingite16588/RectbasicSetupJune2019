@@ -4,59 +4,77 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
 module.exports = (env, argv) => {
+  var DEV_MODE = env.development ? true : false
 
-  var DEV_MODE=env.development ?true:false
-
-return {
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
-      },
-      {
-        test: /\.css$/,
-        use: [
-           {
-             loader:MiniCssExtractPlugin.loader,
-            
-           },'css-loader',
-           'postcss-loader',
-        ]
-      },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader"
+  return {
+    module: {
+      rules: [
+        {
+          test: /\.(js|jsx)$/,
+          exclude: /node_modules/,
+          use: {
+            loader: "babel-loader"
           }
-        ]
-      }
-    ]
-  },
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html"
-    }),
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: '[name].css',
-      chunkFilename: '[id].css',
-    }),
+        },
+        {
+          test: /\.(s*|sass)css$/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+            },
+            'css-loader', "sass-loader",
+          ]
+        },
 
-  ],
-  devServer:{
-    historyApiFallback: true,
-   // compress: true,
-  },
-  //devtool: DEV_MODE? "cheap-module-eval-source-map":"cheap-module-source-map",
-  devtool: DEV_MODE? "cheap-module-eval-source-map":"source-map",
- // devtool: false,
-  mode:DEV_MODE?"development":"production"
-}
+        {
+          test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+         
+          use: [
+              {
+                  loader: 'url-loader',
+                  options: {
+                      limit: 1000,
+                      mimetype: 'application/font-woff'
+                  }
+              }
+
+          ]
+      },
+      {
+        test: /\.(ttf|eot|svg|gif|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+           
+            use: [{
+                loader: 'file-loader'
+            }]
+      },
+      
+        {
+          test: /\.html$/,
+          use: [
+            {
+              loader: "html-loader"
+            }
+          ]
+        }
+      ]
+    },
+    plugins: [
+      new HtmlWebPackPlugin({
+        template: "./src/index.html",
+        filename: "./index.html"
+      }),
+      new MiniCssExtractPlugin({
+        filename: '[name].css',
+        chunkFilename: '[id].css',
+      }),
+
+    ],
+    devServer: {
+      historyApiFallback: true,
+      // compress: true,
+    },
+
+    devtool: DEV_MODE ? "source-map" : "source-map",
+    mode: DEV_MODE ? "development" : "production"
+  }
 }

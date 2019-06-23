@@ -1,0 +1,42 @@
+
+.navbar{
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+background-color: #ffffff;
+margin-left:300px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.35em 0.4em;
+    font-size: 85%;
+    font-weight: 600;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.18rem;
+}
+
+.tag-pill {
+    padding-right: 0.6em;
+    padding-left: 0.6em;
+    border-radius: 10rem;
+}
+
+.tag-up {
+    position: relative;
+    top: -13px;
+    right: 14px;
+}
+
+.tag-danger {
+    background-color: #DA4453;
+}
+
+.tag-info {
+    background-color: #3BAFDA;
+}
+.dropdown-menu i{
+    padding: 0px 12px 0px 0px;
+}
