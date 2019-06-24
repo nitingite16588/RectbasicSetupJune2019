@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react';
-import profile from '../../../img/profile.png'
+import profile from '../../../img/profile.png';
+
+
 
 
 export default class AwardDetails extends Component {
@@ -9,6 +11,7 @@ export default class AwardDetails extends Component {
 
 
     }
+
 
     render() {
         return (
@@ -91,7 +94,8 @@ export default class AwardDetails extends Component {
 
                 <div class="row">
                     <div class="col-md-12 col-sm-12 close-survey">
-                    <button type="button" class="btn btn-lg btn-primary" >Close Award</button>
+                    <button  className="btn btn-lg btn-primary"  >Close Award</button>
+                  
                         
                  </div>
                  </div>

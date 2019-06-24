@@ -2,8 +2,7 @@
 import React, { Component } from 'react';
 
 import { BrowserRouter as Router, Route, Redirect, Switch, NavLink } from 'react-router-dom';
-import Counter from '../counter/Counter.jsx';
-import Home from '../home/Home.jsx';
+
 import AwardForm from '../admin/AwardForm.jsx';
 
 import AwardDetails from '../admin/AwardDetails.jsx';
@@ -37,13 +36,13 @@ export default class Sidebar extends Component {
                  </a>
                 </li>
               </NavLink >
-              <NavLink to="/counter" activeClassName="selected">
+            
                 <li>
                   <a >
                     <i class="fas fa-user fa-lg"></i> Me
                   </a>
                 </li>
-              </NavLink >
+            
               
                 <li>
                   <a >
@@ -80,7 +79,7 @@ export default class Sidebar extends Component {
             <Switch>
 
               <Route exact path="/dashboard" component={Dashboard} />
-              <Route path="/counter" component={Counter} />
+             >
               <Route path="/awardform" component={AwardForm} />
               <Route path="/awarddetails" component={AwardDetails} />
 

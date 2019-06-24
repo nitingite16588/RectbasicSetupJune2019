@@ -1,12 +1,25 @@
 
 import React, { Component } from 'react';
-import profile from '../../../img/profile.png'
+import profile from '../../../img/profile.png';
+import * as Api  from '../servise/Api.jsx';
 
 
 export default class AwardDetails extends Component {
     constructor(props) {
         super(props);
+  }
 
+
+        
+    closeAward(){
+
+        Api.getApi().then((data)=>{
+
+            console.log(data)
+
+        })
+        
+      
 
     }
 
@@ -91,7 +104,9 @@ export default class AwardDetails extends Component {
 
                 <div class="row">
                     <div class="col-md-12 col-sm-12 close-survey">
-                    <button type="button" class="btn btn-lg btn-primary" >Close Award</button>
+                  
+                  
+                    <button  className="btn btn-lg btn-primary" onClick={this.closeAward.bind(this)} >Close Award</button>
                         
                  </div>
                  </div>

@@ -1,7 +1,8 @@
 
 import React, { Component } from 'react';
 
-import ReactStars from 'react-stars'
+import ReactStars from 'react-stars';
+import profile from '../../../img/profile.png';
 
 
 
@@ -9,7 +10,7 @@ export default class UserAwardForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userRating:[
+      userRating: [
         {
           id: 1,
           name: "nitin gite",
@@ -41,7 +42,7 @@ export default class UserAwardForm extends Component {
 
   }
 
-  ratingChanged(newRating,item){
+  ratingChanged(newRating, item) {
     console.log(newRating)
     console.log(item)
 
@@ -60,19 +61,25 @@ export default class UserAwardForm extends Component {
             {this.state.userRating.map((item) => {
               return (
 
-       <div class="row mt30">
+                <div class="row mt30">
                   <div class=" col-md-6 col-sm-6">
-                    <div class="card card-stats">
-                      <div class="card-header card-header-success card-header-icon alignl">
+                    <div class="card card-stats userawardform">
+                      <div class="card-header  card-header-success card-header-icon alignl">
                         <div class="card-icon ">
-                          <i class="fas fa-thumbs-up"></i>
+                        <img class="img" src={profile} />
 
                         </div>
+
+                        {/* <div class="card-avatar">
+                          <a >
+                            <img class="img" src={profile} />
+                          </a>
+                        </div> */}
                         <div class="user-details">
                           <h5>{item.name}</h5>
                           <ul>
-                            <li> <i class="fas fa-envelope"></i> {item.email} <span>
-                               nitin.gite@ubs.com</span>
+                            <li> <i class="fas fa-envelope"></i><span> {item.email} </span>
+
                             </li>
                             <li> <i class="fas fa-phone-alt"></i>   <span>{item.mob}</span>
                             </li>
@@ -85,8 +92,8 @@ export default class UserAwardForm extends Component {
                       </div>
                       <div class="card-footer">
                         <div class="stats">
-                          <i class="material-icons">date_range</i>
-                          <ReactStars onChange={this.ratingChanged.bind(this,item)} count={5} size={40} value={item.rating} color2={'#ffd700'} half={false} />
+
+                          <ReactStars onChange={this.ratingChanged.bind(this, item)} count={5} size={40} value={item.rating} color2={'#ffd700'} half={false} />
                         </div>
                       </div>
                     </div>
